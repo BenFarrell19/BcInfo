@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browser tab name</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="./css/style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+                <header>
+                    <div class="logo">
+                        BcInfo
+                    </div>
+                    <a href="#" class="hamburger" id="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </a>
+                    <nav>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home</a></li>
+                            <li><a class="nav-link" href="#">About</a></li>
+                            <li><a class="nav-link" href="map.html">Map</a></li>
+                            <li><a class="nav-link" href="weather.html">Weather</a></li>
+                            <li><a class="nav-link" href="#">Projects</a></li>
+                            <li><a class="nav-link" href="#">Contact</a></li>                    
+                        </ul>
+                    </nav>
+                </header>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+        <div class="map-container">
+            <div id='search-field'>
+                <h1>Location: Bozeman, MT</h1>
+                <ul>
+                    <li>Vert:
+                        <p>(Vertical of the main fall line)</p> 
+                        <div id="range-container"><input type="range" id="sliderv" min="0" max="4000" value="1000"></div>
+                        <span id="vert"></span><span> Ft+</span>
+                    </li>
+                    <li>Distance:
+                        <p>(Approach to base of the line)</p> 
+                        <div id="range-container"><input type="range" id="slider" min="1" max="25" value="5"></div>
+                        <span>&lt; </span><span id="distance"></span><span> Miles</span>
+                    </li>
+                    <li>Difficulty: 
+                        <select>
+                            <option value=1>Super Chill</option>
+                            <option value=2>Chill</option>
+                            <option value=3>Decent day out</option>
+                            <option value=4>Ok that was legit</option>
+                            <option value=5>I am Kilian Jornet</option>
+                        </select>
+                        
+                    </li>
+                    <li>Type: 
+                        <select>
+                            <option value="All">All</option>
+                            <option value="Coulior">Couloir</option>
+                            <option value="Meadow">Meadow</option>
+                            <option value="Freeride">Freeride</option>
+                            <option value="Traverse">Traverse</option>
+                        </select>
+                    </li>
+                    <li>Rating: 
+                    </li>
+                    <div class="star-widget">
+                        <input type="radio" name="rate" id="rate-5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-1">
+                        <label for="rate-1" class="fas fa-star"></label>
+                      </div>
+                </ul>
+            </div>
+
+            <div id="beta">
+                <h1>Beta</h1>
+                <ul>
+                    <li>Forecast</li>
+                    <li>Trip Reports</li>
+                    <li>Area data</li>
+                </ul>
+            </div>
+
+            <div id='map'></div>
+
+        </div>
+            <script src="./js/nav.js"></script>
+        </div>
+    </body>
+</html>
+ 

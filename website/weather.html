@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browser tab name</title>
+        <link rel="stylesheet" href="./css/style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body>  
+        <header>
+            <div class="logo">
+                BcInfo
+            </div>
+            <a href="#" class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link" href="map.html">Map</a></li>
+                    <li><a class="nav-link" href="weather.html">Weather</a></li>
+                    <li><a class="nav-link" href="#">Projects</a></li>
+                    <li><a class="nav-link" href="#">Contact</a></li>             
+                </ul>
+            </nav>
+        </header>
+        <div id="intro">
+        <div id="ti">WEATHER FORECASTS</div>
+            <nav>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://forecast.weather.gov/MapClick.php?lon=-111.00358486175533&lat=45.44461987725907">NWS</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.windy.com/">WINDY</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.mountain-forecast.com/peaks/Mount-Blackmore/forecasts/3095">MTN FORECAST</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://spotwx.com/">SPOTWX</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://powderchasers.com/">POWDERCHASERS</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://opensnow.com/">OPENSNOW</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://weatherstreet.com/">WEATHERSTREET</a></li>         
+                </ul>
+            </nav>
+        </div>
+        <div class="wxhead">
+            <h1>In depth forecasts for confidence in your adventure</h1>
+            <p>Know what you're looking for? Try the direct links above, if not read on for weather forecasting beta</p>
+        </div>
+        <div class="wxbody">
+            <div class="weatherContainer">
+                <div class='wxrow1' onclick="window.open('https://forecast.weather.gov/MapClick.php?lon=-111.00358486175533&lat=45.44461987725907', '_blank');" style="cursor:pointer;">
+                    <div class='wxinfo'>
+                        <h1>NWS 7 Day Point Forecast</h1>
+                        <p>Go to for backcountry forecasting anyday, anywhere</p>
+                    </div>
+                    <div class="wximg1"></div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://www.windy.com/', '_blank');" style="cursor:pointer;">
+                    <div class="wximg2"></div>
+                    <div class='wxinfo2'>
+                        <h1>Windy.com</h1>
+                        <p>Modern design of spotwx with some features paywalled</p>
+                    </div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://www.mountain-forecast.com/peaks/Mount-Blackmore/forecasts/3095', '_blank');" style="cursor:pointer;">
+                    <div class='wxinfo'>
+                        <h1>Mountain Forecast</h1>
+                        <p>Simple layout, some swear by it, others swear against it</p>
+                    </div>
+                    <div class="wximg3"></div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://spotwx.com/', '_blank');" style="cursor:pointer;">
+                    <div class="wximg5"></div>
+                    <div class='wxinfo2'>
+                        <h1>SpotWx</h1>
+                        <p>Ten different forecasting models, point forecast, best for meteorology nerds</p>
+                    </div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://powderchasers.com/', '_blank');" style="cursor:pointer;">
+                    <div class='wxinfo'>
+                        <h1>Powder Chasers</h1>
+                        <p>Deeper insights for snowfall amounts if they cover your area</p>
+                    </div>
+                    <div class="wximg6"></div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://weatherstreet.com/', '_blank');" style="cursor:pointer;">
+                    <div class="wximg7"></div>
+                    <div class='wxinfo2'>
+                            <h1>Weather Street</h1>
+                            <p>Nationwide forecasts and modelling</p>
+                    </div>
+                </div> 
+                <div class='wxrow' onclick="window.open('https://opensnow.com/', '_blank');" style="cursor:pointer;">
+                    <div class='wxinfo'>
+                            <h1>OpenSnow</h1>
+                            <p>Good snowfall forecasts, Paywalled, shilled by sponsored athletes</p>
+                    </div>
+                    <div class="wximg8"></div>
+                </div> 
+            </div>
+        </div>
+        <script src="./js/nav.js"></script>
+    </body>
+</html>
+ 

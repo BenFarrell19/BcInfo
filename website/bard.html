@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tallest Mountains in Each State</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+    type="text/css"
+  />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-navigation/v4.0.1/mapbox-gl-navigation.min.js"></script>
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-navigation/v4.0.1/mapbox-gl-navigation.css"
+    rel="stylesheet"
+  />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+    type="text/css"
+  />
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuZjc5NyIsImEiOiJjbGNlYmhsdzQycmkzM3FsN3UwbGdidDJjIn0.4mBRr3Jfb7xYo9mjYwgvOg';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-98.5795, 39.8283], // Center the map on the United States
+      zoom: 3
+    });
+
+    // Add navigation control
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add geocoder control
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+      })
+    );
+
+    // Add directions control
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+      }),
+      'top-left'
+    );
+
+    // Hard-coded mountain data
+    var mountainData = [
+      { name: 'Mount McKinley', elevation: 20320, latitude: 63.0695, longitude: -151.007 },
+      { name: 'Mount Whitney', elevation: 14494, latitude: 36.5785, longitude: -118.2926 },
+      // Add more mountains here for other states
+    ];
+
+    // Function to add markers for tallest mountains
+    function addTallestMountainsMarkers() {
+      mountainData.forEach(function (mountain) {
+        var marker = new mapboxgl.Marker()
+          .setLngLat([mountain.longitude, mountain.latitude])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML('<h3>' + mountain.name + '</h3><p>Elevation: ' + mountain.elevation + ' ft</p>')
+          )
+          .addTo(map);
+      });
+    }
+
+    // Listen for the map load event
+    map.on('load', function () {
+      // Call the function to add tallest mountains markers
+      addTallestMountainsMarkers();
+    });
+  </script>
+</body>
+</html>

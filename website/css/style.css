@@ -1,0 +1,590 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    
+    
+}
+
+a, a:visited {
+    color: white;
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 0;
+}
+
+body {
+    background: url(../images/rainiertopogs.png);
+    background-size: cover;
+    height: 100vh;
+    min-height: 0;
+}
+
+header a { 
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+header { 
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0,0,0);
+    align-items: center;
+    padding: 2rem 0vh;
+    height: 60px;
+    min-height: 0;
+    font-weight: 700;
+    color: white;
+}
+
+header .logo {
+    margin: 0rem 1.5rem;
+    font-size: 2em;
+    font-weight: 600;
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav ul li {
+    margin-right: 1rem;
+    
+}
+
+nav ul li a {
+    font-size: 1.3 rem;
+    padding: 8px 10px;
+}
+
+.nav-link[aria-current="page"]{
+    background-color: grey;
+    transition: 0.5s;
+    border-radius: 4px;  
+}
+
+nav ul li a:active,
+nav ul li a:hover {
+    background-color: grey;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.hamburger {
+     position: absolute;
+     right: 1.5rem;
+     flex-direction: column;
+     justify-content: space-between;
+     width: 30px;
+     height: 21px;
+     display: none;
+}
+
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 0.3s all;
+
+
+}
+
+@media (max-width: 768px) {
+
+    body {
+            overflow-x: hidden;
+            background-position: cover;
+        }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 8vh;
+        right: -100%;
+        background-color: rgba(90, 90, 90, 0.65);
+        color: black;
+        height: 92vh;
+        width: 100%;
+        align-items: center;
+        transition: right 0.3s ease-in;
+    }
+
+    nav ul li {
+        margin-right: 0px;
+        
+    }
+    
+    nav ul li a:hover {
+        background-color: rgb(110, 110, 110);
+        transition: 0.5s;
+        border-radius: 4px;
+    }
+
+    .menu-slide {
+        right: 0;
+        transition: right 0.3s ease-in;
+    }
+
+    .cross .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .cross .bar:first-child {
+        transform: rotate(-45deg) translate(-5px, 7px);
+
+    }
+
+    .cross .bar:last-child {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+}
+
+.landing {
+    background-image: url(../images/tatoosh.jpeg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    margin: auto;
+    width: 100%;
+    height: 40%;
+    color: #fff;
+    text-align: center;
+    padding: 5% 0;
+
+}
+
+.landing h1 {
+    font-size: 4em;
+    font-weight: 500;
+}
+
+.landing h3 {
+    padding-bottom: .5em;
+}
+
+.main {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    margin: auto;
+}
+
+
+
+
+
+
+
+.map-container { 
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 0;
+    flex-shrink: 5;
+    overflow: hidden;
+
+
+    
+}
+
+
+#map {
+    flex: auto;
+    align-self: flex-end;
+    background-color: pink;
+    width: 62vw; 
+    height: 100%;
+    min-height: 0;
+    flex-shrink: 5;
+}
+
+#search-field {
+    flex: auto;
+    background-color: darkgrey;
+    width: 30vw;
+    height: 60vh;
+    margin: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    padding: 2vw;
+    border-radius: 2rem;
+    
+}
+
+
+
+#search-field ul {
+    height: 90%;
+    padding-bottom: 1vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1vw;
+    
+} 
+
+#search-field ul li {
+    margin: 2vh 0vh;
+}
+
+#search-field ul li select{
+    color: black;
+}
+
+
+
+#search-field ul li option{
+    color: black;
+}
+
+#slider {
+    width: 60%;
+}
+
+#sliderv {
+    width: 60%;
+}
+
+
+#search-field .edit:hover{
+    text-decoration: underline;
+}
+
+
+
+.star-widget {
+    float: right;
+    margin-right: 18vw;
+    padding-right: 0.7vw;
+
+}
+
+#search-field .star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size: 20px;
+    color: white;
+    padding-right: 5px;
+    padding-left: 0;
+    float: right;
+    transition: all 0.2s ease;   
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: black;
+}
+
+input:checked ~ label{
+    color: black;
+}
+
+#search-field form{
+    display: none;
+}
+
+input:checked ~ form{
+    display: block;
+}
+
+
+#beta {
+    flex: auto;
+    background-color: darkgrey;
+    width: 30vw;
+    margin: 3vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    padding: 1vw 2vw;
+    border-radius: 2rem;
+}
+
+#beta ul {
+    text-align: center;
+    height: 90%;
+    padding-bottom: 1vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+
+.marker {
+    background-image: url(../images/waypoint.png);
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+
+.wxbody {
+    min-height: 100%;
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+}
+
+.wxhead {
+    width: 100%;
+    height: 30%;
+    background-image: url(../images/tatoosh.jpeg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+    padding: 5% 0;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid black;
+}
+
+.wxhead h1 {
+    font-weight: 600;
+}
+
+.wxhead p {
+    width: 40%;
+    margin: auto;
+    padding-top: .4em;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+#ti {
+    font-size: .6em;
+    padding-right: 1em;
+    border-right: black solid 4px;
+}
+
+#intro {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #fff;
+    min-height: 0px;
+    height: 65px;
+    width: 100%;
+    font-size: 2em;
+    padding: .5em;
+    padding-top: 0;
+    padding-bottom: 0.1em;
+    font-weight: 700;
+    color: black;
+    border-bottom: 4px solid black;   
+}
+
+#intro a { 
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+#intro ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 1em;
+    font-size: .6em;
+
+}
+
+#intro ul li {
+    margin-right: 1rem;
+    
+}
+
+
+#intro ul li a:hover {
+    background-color: grey;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+#intro a:visited {
+    color: black;
+}
+
+.wxrow {
+    border: 4px black solid;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    border-bottom: 0;
+
+}
+
+.wxrow1 {
+    border: 4px black solid;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    border-bottom: 0;
+    border-top: 0;
+
+}
+
+.wxinfo {
+    position: relative;
+    flex: 0 1 30%; 
+    word-wrap: break-word;
+    font-size: 0.7em;
+    color: black;
+    max-width: 30%;
+    font-weight: 500;
+    text-align: center;
+    border-right: 4px black solid;
+    overflow: hidden;
+    min-height: 0;
+
+}
+
+.wxinfo2 {
+    position: relative;
+    flex: 0 1 30%;
+    padding: 1.4em; 
+    word-wrap: break-word;
+    font-size: 0.7em;
+    color: black;
+    max-width: 30%;
+    font-weight: 500;
+    text-align: center;
+    border-left: 4px black solid;
+    overflow: hidden;
+    min-height: 0;
+
+}
+
+.wxinfo h1 {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    margin: 2.4em;
+    margin-bottom: 0;
+    border-bottom: 3px black solid;
+    
+}   
+
+.wxinfo p {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-top: .8em;
+    font-size: 1.4em;
+    font-weight: 500;
+    
+}
+
+.wxinfo2 h1 {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    margin: 2.4em;
+    margin-bottom: 0;
+    border-bottom: 3px black solid;
+}
+
+.wxinfo2 p {
+    padding-left: 1.5em;
+    padding-right: 1.5em;   
+    margin-top: .8em;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.wximg1 {
+    background-image: url(../images/nws.png);
+    background-size: cover;
+    flex: 0 1 70%;
+    min-height: 0;
+    
+}
+.wximg2 {
+    background-image: url(../images/windy.png);
+    background-size: cover;
+    flex: 0 1 70%;
+    min-height: 0;
+
+   
+}
+.wximg3 {
+    background-image: url(../images/mtf.png);
+    background-size: cover;
+    flex: 0 1 70%;
+}
+
+.wximg4 {
+    background-image: url(../images/winter.png);
+    background-size: cover;
+    flex: 0 1 70%;
+   
+}
+.wximg5 {
+    background-image: url(../images/spotwx.png);
+    background-size: cover;
+    flex: 0 1 70%;
+   
+}
+.wximg6 {
+    background-image: url(../images/powderchasers.png);
+    background-size: cover;
+    flex: 0 1 70%;
+
+}
+.wximg7 {
+    background-image: url(../images/weatherstreet.png);
+    background-size: cover;
+    flex: 0 1 70%;
+
+}
+.wximg8 {
+    background-image: url(../images/opensnow.png);
+    background-size: cover;
+    flex: 0 1 70%;
+  
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
