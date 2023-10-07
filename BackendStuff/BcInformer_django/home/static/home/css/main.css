@@ -1,0 +1,43 @@
+/*Global =========== */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+
+}
+
+.container {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+:root {
+    --orange: #fa5652;
+    --green: #035755;
+    --gray: #4b4f51;
+    --pink: #fee6e5;
+    --light-pink: #FFF9F9;
+    --smooth: all .3s ease-in;
+    --shadow: 0 7px 29px rgpa(100, 100 ,111, .2);
+
+
+}
